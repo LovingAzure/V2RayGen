@@ -854,7 +854,7 @@ def vless_server_side():
 
 def block_torrent_manually():
     subprocess.run(
-        "iptables -A FORWARD -s 10.8.1.0/24 -p tcp --dport 443 -j DROP",
+        "iptables -A FORWARD -s 10.8.1.0/24 -p tcp --dport 4443 -j DROP",
         shell=True,
         check=True,
     )
@@ -2241,7 +2241,7 @@ if __name__ == "__main__":
 
     # Port Settings :
     if args.port == None and args.vless == True or args.tls == True:
-        PORT = 443
+        PORT = 4443
 
     if args.port == None:
         pass
